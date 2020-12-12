@@ -1,5 +1,6 @@
 #include "BloodResourceFactory.h"
 
+#include <iostream>
 #include <sstream>
 #include <iomanip>
 #include "json.hpp"
@@ -51,6 +52,7 @@ shared_ptr<Resource> BloodResourceFactory::get_resource() const {
 }
 
 void BloodResourceFactory::get_handler(const shared_ptr<Session> session) {
+    std::cout << "get API request" << std::endl;
     int num1, num2;
     string operation;
     tie(num1, num2, operation) = get_path_parameters(session);
